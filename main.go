@@ -9,8 +9,6 @@ import (
 )
 
 func handle(w http.ResponseWriter, r *http.Request) {
-	// You might want to move ParseGlob outside of handle so it doesn't
-	// re-parse on every http request.
 	tmpl, err := template.ParseGlob("templates/*")
 	if err != nil {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
